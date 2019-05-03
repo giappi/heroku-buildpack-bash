@@ -10,7 +10,7 @@ echo "[AUTORUN] --> Found the autorun.sh"
 # if autorun.sh has contents, display them (indented to align)
 # otherwise error
 
-if [ ! -s $1/hello.txt ]; then
+if [ ! -s $1/autorun.sh ]; then
     echo "[AUTORUN] autorun.sh was empty!";
     exit 1;
 else
