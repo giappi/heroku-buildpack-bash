@@ -1,0 +1,19 @@
+#!/bin/sh
+
+indent()
+{
+    sed -u 's/^/       /';
+}
+
+echo "[AUTORUN] --> Found the autorun.sh"
+
+# if autorun.sh has contents, display them (indented to align)
+# otherwise error
+
+if [ ! -s $1/hello.txt ]; then
+    echo "[AUTORUN] autorun.sh was empty!";
+    exit 1;
+else
+    echo "[AUTORUN] --> Execute autorun.sh" | indent;
+    bash autorun.sh;
+fi | indent;
