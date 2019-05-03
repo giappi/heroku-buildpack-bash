@@ -5,15 +5,17 @@ indent()
     sed -u 's/^/       /';
 }
 
+AUTORUN_FILE="$1/autorun.sh"
+
 echo "[AUTORUN] --> Found the autorun.sh"
 
 # if autorun.sh has contents, display them (indented to align)
 # otherwise error
 
-if [ ! -s $1/autorun.sh ]; then
+if [ ! -s $AUTORUN_FILE ]; then
     echo "[AUTORUN] autorun.sh was empty!";
     exit 1;
 else
     echo "[AUTORUN] --> Execute autorun.sh" | indent;
-    bash autorun.sh;
+    bash "$AUTORUN_FILE";
 fi | indent;
